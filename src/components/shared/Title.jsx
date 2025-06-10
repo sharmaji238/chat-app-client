@@ -10,4 +10,4 @@ const Title = ({title="Chattu | Chat App", description="New generation Chat App"
   )
 }
 
-export default Title
+export default Title;

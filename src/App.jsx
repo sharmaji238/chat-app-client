@@ -8,7 +8,7 @@ const  Login = lazy( ()=> import ('./pages/Login'));
 const  Chat = lazy( ()=> import ('./pages/Chat'));
 const  Groups = lazy( ()=> import ('./pages/Groups'));
 
-let user = false;
+let user = true;
 // This is a placeholder for user authentication status.
  const App = () => {
 
