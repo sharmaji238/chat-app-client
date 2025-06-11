@@ -1,7 +1,8 @@
-import React, { lazy } from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom';
 import ProtectedRoute from './auth/ProtectedRoute';
 import { NotFound } from './pages/NotFound';
+import { LoadingBackDrop } from './components/shared/LoadingBackDrop';
 
 const  Home = lazy( ()=> import ('./pages/Home'));
 const  Login = lazy( ()=> import ('./pages/Login'));
@@ -14,7 +15,8 @@ let user = true;
 
   
   return (
-   <Routes>
+  <Suspense fallback={<LoadingBackDrop/>}>
+  <Routes>    
     <Route element={<ProtectedRoute user={user}/>}>
     <Route path="/" element={<Home/>}/>
     <Route path="/chat/:chatId" element={<Chat/>}/>
@@ -23,6 +25,7 @@ let user = true;
     <Route path="/login" element={<ProtectedRoute user={!user} redirect='/'><Login/></ProtectedRoute>}/>
     <Route path="*" element={<NotFound/>}/>
    </Routes>
+  </Suspense>
   )
 }
 

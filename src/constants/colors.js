@@ -1,5 +1,6 @@
 export const orange = "#ff9800";
 export const white = "#ffffff";
+export const offWhite = "#FFFDF2";
 export const black = "#000000";
 export const grey = "#808080";
 export const lightGrey = "#f0f0f0";
@@ -9,7 +10,7 @@ export const lightBlue = "#bbdefb";
 export const red = "#f44336";
 export const green = "#4caf50";
 export const yellow = "#ffeb3b";
-export const purple = "#9c27b0";
+export const purple = "#970747";
 export const pink = "#e91e63";
 export const cyan = "#00bcd4";
 export const teal = "#009688";
