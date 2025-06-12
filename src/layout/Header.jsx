@@ -50,7 +50,6 @@ export const Header = () => {
     }
     const handleLogout = () => {
         // Handle mobile menu toggle logic here
-        set(prev => !prev);
         console.log("Add Group clicked");
     }
     const navigateToHome = () => {

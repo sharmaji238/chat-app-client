@@ -12,6 +12,7 @@ export const green = "#4caf50";
 export const yellow = "#ffeb3b";
 export const purple = "#970747";
 export const pink = "#e91e63";
+export const pinkHover = "#f7d3df";
 export const cyan = "#00bcd4";
 export const teal = "#009688";
 export const brown = "#795548";

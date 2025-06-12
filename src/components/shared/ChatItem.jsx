@@ -1,30 +1,65 @@
-import React from 'react'
+import React, { memo } from 'react'
+import { StyledLink } from '../styles/StyledComponent'
+import { AvatarCard } from './AvatarCard'
+import { Box, Divider, Stack, Typography } from '@mui/material'
 
-export const ChatItem = ({
+ const ChatItem = ({
     avatar=[],
     name,
-    _d,
+    _id,
     groupChat = false,
     sameSender,
     isOnline,
-    newMessage
+    newMessageAlert,
+    index=0,
+    handleDeleteChat,
 }) => {
   return (
-    <Stack width={w} direction="column" spacing={1}>
-      {chats.map((chat) => {
-        const isOnline = onlineUsers.includes(chat._id);
-        const newMessage = newMessageAlert.find(alert => alert.chatId === chat._id)?.count || 0;
-
-        return (
-          <div key={chat._id} style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '5px', backgroundColor: chatId === chat._id ? '#e0f7fa' : '#fff' }}>
-            <h4>{chat.name}</h4>
-            <p>{isOnline ? 'Online' : 'Offline'}</p>
-            {newMessage > 0 && <span style={{ color: 'red' }}>New Messages: {newMessage}</span>}
-            <button onClick={() => handleDeleteChat(chat._id)}>Delete Chat</button>
-          </div>
-        );
-      })}
-
-    </Stack>
+    <StyledLink 
+    to={`/chat/${_id}`} 
+    sx={{padding: "0"}}
+    onContextMenu={(e) => handleDeleteChat(e, _id, groupChat)} >
+      <div
+      style={{
+        display: "flex",
+        gap: "1rem",
+        alignItems: "center",
+        padding: "0.5rem 1.5rem",
+        margin: "0rem 0.5rem",
+        backgroundColor: sameSender ? "#f0f0f0" : "transparent",
+        position: "relative"
+      }}
+      >
+        <AvatarCard avatar={avatar} />
+        <Stack>
+          <Typography
+          variant='body1'
+          sx={{
+            fontWeight: "600",
+            color: sameSender ? "primary.main" : "text.primary",
+          }}
+          >{name}</Typography>
+          {newMessageAlert && (
+            <Typography variant="caption">{newMessageAlert.count} new messages</Typography>
+          )}
+        </Stack>
+        {isOnline && (
+          <Box 
+            sx={{
+              width: "0.5rem",
+              height: "0.5rem",
+              borderRadius: "50%",
+              backgroundColor: "green",
+              position: "absolute",
+              top: "50%",
+              right: "0.5rem",
+              transform: "translateY(-50%)"
+            }}
+          />)}
+      </div>
+      <Divider variant='inset'/>
+    </StyledLink>
   )
 }
+
+export default ChatItem;
