@@ -14,7 +14,7 @@ import {
 } from '@mui/material';
 import { useState } from 'react';
 import { usernameValidator } from '../utils/validation';
-import { CameraAlt as CameraAltIcon } from '@mui/icons-material';
+import  CameraAltIcon  from '@mui/icons-material/CameraAltIcon';
 import { VishuallyHiddenInput } from '../components/styles/StyledComponent';
 
 const Login = () => {

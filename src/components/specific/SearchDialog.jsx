@@ -1,20 +1,14 @@
 import { useInputValidation } from '6pp'
-import { Avatar, Dialog, DialogTitle, List, ListItem, ListItemAvatar, ListItemText } from '@mui/material'
+import { Avatar, Dialog, DialogTitle, List, Stack, TextField } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
-import { Stack, TextField } from '@mui/material'
 import { sampleUsers } from '../../constants/sampleData'
 import UserItem from './UserItem'
 import { pink } from '../../constants/colors'
+import { useState } from 'react'
 
 const SearchDialog = () => {
 
   const search = useInputValidation()
-  // const handleSearch = (event) => {
-  //   event.preventDefault();
-  //   const query = event.target.search.value;
-  //   console.log("Search query:", query);
-  //   // Implement search logic here
-  // }
   const handleClose = () => {
     console.log("Dialog closed");
     // Implement close logic here
@@ -24,12 +18,17 @@ const SearchDialog = () => {
     // Implement search button logic here
   }
 
-  const users = sampleUsers
+  const addFriendHandler = (userId) => {
+    console.log("Add friend clicked for user:", userId);
+    // Implement add friend logic here
+  }
+ let isLoadingSendFriendRequest = false; // Replace with actual loading state if needed
+  const [users,setUsers] = useState(sampleUsers)
   return (
     <Dialog
       open={true}
       onClose={() => console.log('Dialog closed')}
-      maxWidth="sm"
+      // maxWidth="sm"
     // fullWidth
     >
       <Stack p={2} direction={"column"} width={"25rem"}>
@@ -54,7 +53,10 @@ const SearchDialog = () => {
 
       <List>
         {users.map((user) => (
-          <UserItem key={user.id} user={user} />
+          <UserItem key={user.id} user={user} 
+          handler={addFriendHandler}
+          handlerIsLoading={isLoadingSendFriendRequest} // Replace with actual loading state if needed
+          />
         ))}
       </List>
       </Stack>

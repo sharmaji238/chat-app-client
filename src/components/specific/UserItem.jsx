@@ -8,14 +8,20 @@ const UserItem = ({
     handler,
     handlerIsLoading,
     isAdded = false,
-    styling = {}, }) => {
+    styling = {}, 
+}) => {
+        
+    const {_id,name,avatar}=user
+
     return (
         <>
-            <ListItem key={user?.id} onClick={() => console.log(`Selected user: ${user?.name}`)}>
+            <ListItem 
+            // onClick={() => console.log(`Selected user: ${name}`)}
+                >
                 <ListItemAvatar>
-                    <Avatar alt={user?.name} src={user?.avatar} />
+                    <Avatar alt={name} src={avatar} />
                 </ListItemAvatar>
-                <ListItemText primary={user?.name} secondary={user?.email}
+                <ListItemText primary={name} 
                     sx={{
                         flexGlow: 1,
                         display: "-webkit-box",
@@ -24,6 +30,7 @@ const UserItem = ({
                         overflow: "hidden",
                         textOverflow: "ellipsis",
                         width: "100%",
+                        maxWidth: "20rem"
                     }}
                 />
                 <IconButton
@@ -41,7 +48,7 @@ const UserItem = ({
                     {isAdded ? <RemoveIcon /> : <AddIcon />}
                 </IconButton>
             </ListItem>
-            <Divider variant="inset" component="li" />
+            <Divider variant="inset" />
         </>
     )
 }

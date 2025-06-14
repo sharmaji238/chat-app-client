@@ -88,3 +88,27 @@ export const sampleMessage = [
     createdAt: "2024-02-12T10:41:30.630Z",
   },
 ];
+
+export const sampleNotifications = [
+  {
+    _id: "1",
+    type: "friend_request",
+    sender: {
+      _id: "2",
+      name: "Jay",
+      avatar: ["https://picsum.photos/201"],
+    },
+    createdAt: "2024-02-12T10:41:30.630Z",
+  },
+  {
+    _id: "2",
+    type: "message",
+    sender: {
+      _id: "1",
+      name: "Ravi",
+      avatar: ["https://picsum.photos/200"],
+    },
+    chatId: "chatId",
+    createdAt: "2024-02-12T10:41:30.630Z",
+  },
+]; 

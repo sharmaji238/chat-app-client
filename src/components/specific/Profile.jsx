@@ -1,9 +1,9 @@
-import { Avatar, Stack, Typography } from '@mui/material'
-import { black, grey, offWhite } from '../../constants/colors';
-import FaceIcon from '@mui/icons-material/Face';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import FaceIcon from '@mui/icons-material/Face';
+import { Avatar, Stack, Typography } from '@mui/material';
 import moment from 'moment';
+import { black, offWhite } from '../../constants/colors';
 
 const Profile = () => {
     return (
