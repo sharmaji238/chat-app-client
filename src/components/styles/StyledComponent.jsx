@@ -1,7 +1,7 @@
-import { styled } from '@mui/material'
+import { Modal, styled } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { black, grey, offWhite, pinkHover, white } from '../../constants/colors';
+import { black, darkGrey, grey, offWhite, pinkHover, white } from '../../constants/colors';
 
 export const VishuallyHiddenInput = styled('input')(({ theme }) => ({
   position: 'absolute',
@@ -30,3 +30,31 @@ export const StyledLink = styled(Link)(({ theme }) => ({
   //   color: theme.palette.primary.light || '#42a5f5',
   // },
 }));
+
+export const StyledInputBox = styled('input')`
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  outline: none;
+  border:none;
+  padding: 0 3rem;
+  border-radius: 1.5rem;
+  background-color: ${pinkHover};
+  `;
+
+
+export const StyledModal = styled(Modal)(({ theme }) => ({
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  maxWidth: '90vw',
+  maxHeight: '90vh',
+  bgcolor: 'background.paper',
+  boxShadow: 24,
+  p: 2,
+  borderRadius: 2,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+}))

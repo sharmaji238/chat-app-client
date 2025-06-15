@@ -1,53 +1,87 @@
-import {useRef} from 'react'
+import { useRef } from 'react'
 import AppLayout from '../layout/AppLayout'
-import { Stack } from '@mui/material'
-import { green, grey } from '../constants/colors'
+import { Box, IconButton, Stack, Typography } from '@mui/material'
+import { green, grey, offWhite, pink, pinkHover, purple } from '../constants/colors'
+import { StyledInputBox } from '../components/styles/StyledComponent'
+import AttachFileIcon from '@mui/icons-material/AttachFile'
+import SendIcon from '@mui/icons-material/Send'
+import { FileMenu } from '../components/dialogs/FileMenu'
+import { sampleMessage } from '../constants/sampleData'
+import MessageComponent from '../components/shared/MessageComponent'
+
+  const user= {
+    _id: "1",
+    name: "Ravi",
+  }
 
 const Chat = () => {
   const containerRef = useRef(null)
   const fileMenuRef = useRef(null)
+
   return (
     <>
-    <Stack 
-    ref={containerRef}
-    boxSizing={"border-box"}
-    p={{ xs: "1rem", sm: "2rem" }}
-    spacing={{ xs: "1rem", sm: "2rem" }}
-    bgcolor={grey}
-    height={"90%"}
-    sx={{
-      overflowX: "hidden",
-      overflowY: "auto",
-      position: "relative",
-      flexGrow: 1,
-      flexShrink: 0,
-      flexBasis: "auto",
-    }}>
+      <Stack
+        ref={containerRef}
+        boxSizing={"border-box"}
+        p={{ xs: "1rem", sm: "2rem" }}
+        spacing={{ xs: "1rem", sm: "2rem" }}
+        bgcolor={grey}
+        height={"90%"}
+        sx={{
+          overflowX: "hidden",
+          overflowY: "auto",
+          // position: "relative",
+          // flexGrow: 1,
+          // flexShrink: 0,
+          // flexBasis: "auto",
+        }}>
 
-      {/* Chat Header */}
-      <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <h2>Chat</h2>
-        {/* Add any chat header actions here */}
-      </Stack>
-
-      {/* Chat Messages */}
-      <Stack spacing={2} sx={{ flexGrow: 1, overflowY: 'auto' }}>
-        {/* Render chat messages here */}
-        {/* Example message */}
-        <div>Message 1</div>
-        <div>Message 2</div>
-        <div>Message 3</div>
-        {/* Add more messages as needed */}
-      </Stack>
-
+           {/* Messages */}
+        {
+          sampleMessage?.map((message, index) => (   
+            <MessageComponent message={message} user={user} key={message._id}/>
+             ))
+        }
+        
+      </Stack>       
       {/* Chat Input */}
-      <Stack direction="row" spacing={1} alignItems="center">
-        <input type="text" placeholder="Type a message..." style={{ flexGrow: 1 }} />
-        <button type="submit">Send</button>
-      </Stack>
-    
-
-    </Stack>
+      <Box
+        component={"form"}
+        sx={{
+          height: "10%",
+        }}>
+        <Stack
+          direction={"row"}
+          height={"100%"}
+          alignItems={"center"}
+          padding={"0.5rem"}
+          position={"relative"}
+          >
+          <IconButton
+            sx={{
+              position: "absolute",
+              left: "0.5rem",
+              rotate: "45deg",
+              color: pink,
+              '&:hover': {
+                color: purple,
+              },
+            }}
+            ref={fileMenuRef}
+          ><AttachFileIcon /></IconButton>
+          <StyledInputBox placeholder='Type Message here...' autoFocus />
+          <IconButton type='submit'
+            sx={{
+              bgcolor: pink,
+              color: offWhite,
+              '&:hover': {
+                bgcolor: purple,
+              },
+            }}
+          ><SendIcon /></IconButton>
+        </Stack>
+      </Box>
+      <FileMenu ref={fileMenuRef} anchorEl={fileMenuRef.current} />
     </>
   )
 }

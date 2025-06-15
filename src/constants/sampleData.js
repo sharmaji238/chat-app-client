@@ -61,14 +61,25 @@ export const sampleUsers = [
 export const sampleMessage = [
   {
     attachments: [],
-    content: "Der ka Message hai",
+    content: "Hello Kaise ho...",
     _id: "sfnsdjkfsdnfkjsbnd",
     sender: {
-      _id: "user._id",
-      name: "Chaman ",
+      _id: "2",
+      name: "Jay",
     },
     chat: "chatId",
-    createdAt: "2024-02-12T10:41:30.630Z",
+    createdAt: "2025-06-14T10:41:30.630Z",
+  },
+ {
+    attachments: [],
+    content: "I am good. You tell?",
+    _id: "sfnsdjkfsdnfkjsbnwd",
+    sender: {
+      _id: "1",
+      name: "Ravi",
+    },
+    chat: "chatId2",
+    createdAt: "2025-06-14T11:41:30.630Z",
   },
 
   {
@@ -81,12 +92,31 @@ export const sampleMessage = [
     content: "",
     _id: "sfnsdjkfsdnfkdddjsbnd",
     sender: {
-      _id: "sdfsdfsdf",
-      name: "Chaman  2",
+      _id: "2",
+      name: "Jay",
     },
     chat: "chatId",
     createdAt: "2024-02-12T10:41:30.630Z",
   },
+  
+ {
+    attachments: [
+      {
+        public_id: "asdsad 2",
+        url: "https://www.w3schools.com/howto/img_nature_wide.jpg",
+      },
+    ],
+    content: "",
+    _id: "bbdfvnfvdsdnddffd",
+    sender: {
+      _id: "1",
+      name: "Ravi",
+    },
+    chat: "chatId",
+    createdAt: "2024-02-12T10:41:30.630Z",
+  },
+   
+  
 ];
 
 export const sampleNotifications = [
