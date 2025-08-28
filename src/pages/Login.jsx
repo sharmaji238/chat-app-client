@@ -15,7 +15,7 @@ import {
 import { useState } from 'react';
 import { usernameValidator } from '../utils/validation';
 import  CameraAltIcon  from '@mui/icons-material/CameraAltIcon';
-import { VishuallyHiddenInput } from '../components/styles/StyledComponent';
+import { VishuallyHiddenInput } from '../components/styles/StyledComponents';
 
 const Login = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);

@@ -19,6 +19,7 @@ const NewGroup = () => {
     console.log("NewGroup",selectedMembers)
 
   const submitHandler = (user) => { console.log(user)  }
+  const closeHandler = (user) => { console.log(user)  }
 
   const groupName = useInputValidation()
   const isLoading = false // Replace with actual loading state

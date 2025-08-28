@@ -21,10 +21,10 @@ import {
 } from "@mui/material";
 import React, { Suspense, lazy, memo, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { LayoutLoader } from "../components/layout/Loaders";
+// import { LayoutLoader } from "../components/layout/Loaders";
 import AvatarCard from "../components/shared/AvatarCard";
 import { Link } from "../components/styles/StyledComponents";
-import { bgGradient, matBlack } from "../constants/color";
+import { bgGradient, matBlack } from "../constants/colors";
 import { useDispatch, useSelector } from "react-redux";
 import UserItem from "../components/shared/UserItem";
 import { useAsyncMutation, useErrors } from "../hooks/hook";
@@ -264,7 +264,8 @@ const Groups = () => {
   );
 
   return myGroups.isLoading ? (
-    <LayoutLoader />
+    // <LayoutLoader />
+    <>Loading</>
   ) : (
     <Grid container height={"100vh"}>
       <Grid

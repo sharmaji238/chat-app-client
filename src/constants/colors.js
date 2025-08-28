@@ -22,3 +22,5 @@ export const amber = "#ffc107";
 export const deepOrange = "#ff5722";
 export const lightGreen = "#8bc34a";
 export const lightPink = "#f8bbd0";
+export const matBlack = "#121212";
+export const matWhite = "#ffffff";

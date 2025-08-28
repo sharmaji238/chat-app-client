@@ -1,7 +1,7 @@
 import { Avatar, Divider, IconButton, ListItem, ListItemAvatar, ListItemText } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import { grey, pink, purple } from '../../constants/colors';
+import { grey, pink, purple, red } from '../../constants/colors';
 
 const UserItem = ({
     user,
@@ -36,7 +36,7 @@ const UserItem = ({
                 <IconButton
                     size="small"
                     sx={{
-                        bgcolor: isAdded ? grey : pink,
+                        bgcolor: isAdded ? red : pink,
                         color: "white",
                         "&:hover": {
                             bgcolor: isAdded ? "error.dark" : purple,

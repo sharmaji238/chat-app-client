@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { StyledLink } from '../styles/StyledComponent'
+import { StyledLink } from '../styles/StyledComponents'
 import { AvatarCard } from './AvatarCard'
 import { Box, Divider, Stack, Typography } from '@mui/material'
 
